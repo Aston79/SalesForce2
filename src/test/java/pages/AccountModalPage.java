@@ -3,6 +3,7 @@ package pages;
 import elements.DropDown;
 import elements.Input;
 import objects.Account;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,8 +14,7 @@ public class AccountModalPage extends BasePage {
         super(driver);
     }
 
-    @FindBy(xpath = "//*[@title='Save']/span")
-    WebElement saveButton;
+    By saveButton = By.xpath("//*[@title='Save']/span");
 
     public void openPage(String url) {
         driver.get(url);
@@ -31,7 +31,7 @@ public class AccountModalPage extends BasePage {
     }
 
     public void clickSaveButton() {
-        saveButton.click();
+        driver.findElement(saveButton).click();
     }
 
     public AccountModalPage waitPageLoaded() {

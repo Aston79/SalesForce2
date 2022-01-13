@@ -4,7 +4,6 @@ import objects.Account;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
 public class AccountTest extends BaseTest implements ITestConstants {
 
     @Test (description = "Сreation account on salesforce.com")

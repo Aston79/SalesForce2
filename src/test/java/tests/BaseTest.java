@@ -10,7 +10,7 @@ import org.testng.annotations.Listeners;
 import pages.*;
 import utils.TestListener;
 
-import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 @Listeners(TestListener.class)
 abstract class BaseTest {
@@ -33,7 +33,7 @@ abstract class BaseTest {
         options.addArguments("--disable-extensions");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         initPages();
     }
 
