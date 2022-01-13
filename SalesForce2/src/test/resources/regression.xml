@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Test suite" parallel="tests">
+    <listeners>
+        <listener class-name="test.utils.AnnotationTransformer"/>
+    </listeners>
+    <test name="test 1">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.AccountTest"/>
+        </classes>
+    </test> <!-- Test -->
+</suite>

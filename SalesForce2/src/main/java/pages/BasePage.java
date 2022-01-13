@@ -1,12 +1,11 @@
 package pages;
 
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class BasePage {
     WebDriver driver;
@@ -17,9 +16,9 @@ public class BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void waitElementLocated(WebElement element, int timeout) {
-        waitElement = new WebDriverWait(driver, Duration.ofSeconds(timeout));
-        waitElement.until(ExpectedConditions.visibilityOf(element));
+    public void waitElementLocated(By element, int timeout) {
+        waitElement = new WebDriverWait(driver, timeout);
+        waitElement.until(ExpectedConditions.visibilityOfElementLocated(element));
     }
 
 }

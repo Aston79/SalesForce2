@@ -4,15 +4,16 @@ import objects.Account;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+
 public class AccountTest extends BaseTest implements ITestConstants {
 
-    @Test
+    @Test (description = "Сreation account on salesforce.com")
     public void createAccountTest() {
         Account firstAccount = Account.builder()
                 .accountName("FirstAccount")
                 .type("Customer")
                 .website("www.onliner.by")
-                .phone("375291744355")
+                .phone("375297738451")
                 .industry("Apparel")
                 .build();
         firstAccount.setEmployees("60");
@@ -26,13 +27,13 @@ public class AccountTest extends BaseTest implements ITestConstants {
         Assert.assertEquals(accountListPage.getPhoneNumber(firstAccount.getPhone()), firstAccount.getPhone());
     }
 
-    @Test
+    @Test(description = "Сreation two accounts on salesforce.com")
     public void createTwoAccountTest() {
         Account firstAccount = Account.builder()
                 .accountName("FirstAccount")
                 .type("Customer")
                 .website("www.onliner.by")
-                .phone("375291744355")
+                .phone("375297738451")
                 .industry("Chemicals")
                 .employees("100")
                 .build();
@@ -40,7 +41,7 @@ public class AccountTest extends BaseTest implements ITestConstants {
                 .accountName("SecondAccount")
                 .type("Analyst")
                 .website("www.onliner.by")
-                .phone("375291744355")
+                .phone("375297738451")
                 .industry("Communications")
                 .build();
         secondAccount.setEmployees("200");
